@@ -3,7 +3,7 @@ fetch("/buy", {
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: "id=1",
+    body: "id=0",
     credentials: 'include' // 确保携带cookie等身份凭证
 })
 .then(response => response.text())
